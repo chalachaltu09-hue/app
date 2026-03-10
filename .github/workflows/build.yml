@@ -16,7 +16,9 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pyinstaller
       - name: Build Executable
         run: |
           # ፎንቶችንና ሌሎች ፋይሎችን ለማካተት --add-data እንጠቀማለን
