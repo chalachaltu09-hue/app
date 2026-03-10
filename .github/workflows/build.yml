@@ -1,0 +1,35 @@
+name: Build EyoTools App
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest  # እውነተኛ ዊንዶውስ ሲስተም ይጠቀማል
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytubefix PyPDF2 gTTS pygame easyocr qrcode opencv-python Pillow pyinstaller
+
+      - name: Build Executable
+        run: |
+          # ፎንቶችንና ሌሎች ፋይሎችን ለማካተት --add-data እንጠቀማለን
+          # ፎርማቱ፡ "የፋይል_መንገድ;በEXE_ውስጥ_የሚኖረው_ስም"
+          pyinstaller --onefile --noconsole `
+          --add-data "desktopApp/fonts;fonts" `
+          --name "EyoTools" `
+          desktopApp/main.py
+
+      - name: Upload Finished EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: EyoTools-Windows-Package
+          path: dist/*.exe
