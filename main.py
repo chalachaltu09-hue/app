@@ -284,7 +284,7 @@ class CSSStudentsImage(tk.Frame):
     def create_image(self):
         """Create or load the CSS students-themed image"""
         # Try to load custom image first
-        img_path = os.path.join(BASE_DIR, 'assets', 'logo.png')
+        img_path = os.path.join(BASE_DIR, 'assets', 'csstudent.png')
         
         try:
             if os.path.exists(img_path):
@@ -801,4 +801,5 @@ class eyoToolsApp(tk.Tk):
 
 if __name__ == '__main__':
     app = eyoToolsApp()
+
     app.mainloop()
