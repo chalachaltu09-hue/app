@@ -1,0 +1,21 @@
+# Core Packages
+tkinter==8.6
+Pillow==10.1.0
+
+# YouTube Downloader
+pytubefix==6.3.0
+
+# PDF Processing
+PyPDF2==3.0.1
+gTTS==2.5.1
+pygame==2.5.2
+
+# OCR (Optical Character Recognition)
+easyocr==1.7.1
+numpy==1.24.3
+
+# QR Code Generation
+qrcode==7.4.2
+
+# Image Processing
+opencv-python==4.8.1.78  # Optional, for advanced image processing
