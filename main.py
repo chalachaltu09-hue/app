@@ -5,6 +5,7 @@ Bilingual: English and Amharic
 Converted from Kivy to Tkinter
 """
 
+
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 import os
@@ -803,3 +804,4 @@ if __name__ == '__main__':
     app = eyoToolsApp()
 
     app.mainloop()
+
